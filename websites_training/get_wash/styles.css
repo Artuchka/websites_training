@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --secondary-color: #888;
+    --primary-color: #446DF6;
+    --light-primary-color: #7290f3;
+
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.nav {
+    position: absolute;
+    top: 0;
+    width: 80vw;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    height: 100px;
+    align-items: center;
+    gap: 4rem;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav__link a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.full-screen-header .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+
+}
+
+.full-screen-header .content span {
+    width: 100px;
+    height: 2px;
+    background-color: var(--primary-color);
+    display: inline-block;
+    position: relative;
+    top: -7px;
+
+    border-top-right-radius: 100vmax;
+    border-bottom-right-radius: 100vmax;
+}
+
+
+.full-screen-header .content span::before,
+.full-screen-header .content span::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: -1px;
+    bottom: 0;
+    transform-origin: right center;
+    width: 10px;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 100vmax;
+}
+
+.full-screen-header .content span::before {
+    transform: rotate(45deg) translateY(1px);
+}
+
+.full-screen-header .content span::after {
+    transform: rotate(-45deg) translateY(-1px);
+}
+
+.btn {
+    padding: 0.7em 1.7em;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid;
+    border-radius: .3em;
+    cursor: pointer;
+    width: max-content;
+}
+
+.btn.btn--light {
+    border-color: var(--light-primary-color);
+}
+
+.btn.btn--bold {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1em 3em;
+}
+
+.full-screen-header {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.full-screen-header .content,
+.full-screen-header .header__image {
+    width: 50%;
+}
+
+.full-screen-header .content__title,
+.section-start .content__title {
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.full-screen-header .content__subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+}
+
+
+.section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.section.section-start {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-start .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.section-start .content__title {
+    align-self: flex-start;
+}
+
+.section-start .content__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style: none;
+    gap: 1.3rem;
+}
+
+.section-start .list-item {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.section-start .list-item img {
+    width: 30px;
+    height: 30px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.section-start .list-item__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-start;
+}
+
+.section-start .list-item__content .desc {
+    /* font-size: 1rem; */
+    color: var(--secondary-color);
+}
+
+.section-start .list-item__content .title {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.section.section-partner {
+    text-align: center;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.section-partner .section__title {
+    font-weight: 500;
+    font-size: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.section-partner .section__subtitle {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+
+.section-partner .features-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+.section-partner .feauture-item {
+    max-width: 150px;
+}
+
+.section-partner .btn {
+    align-self: center;
+}
