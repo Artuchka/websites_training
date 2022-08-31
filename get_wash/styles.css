@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     --secondary-color: #888;
     --primary-color: #446DF6;
@@ -12,7 +13,125 @@ body {
 
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
+}
 
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+body.scrollable::-webkit-scrollbar {
+    all: unset;
+    width: 20px;
+    background-color: rgba(162, 162, 162, 0.306);
+}
+
+body.scrollable::-webkit-scrollbar-button {
+    display: block;
+    background-color: var(--secondary-color);
+    box-shadow: inset 0px 0px 0px 20px rgba(255, 255, 255, 0.3);
+}
+
+body.scrollable::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
+body.scrollable::-webkit-scrollbar-button:hover {
+    box-shadow: inset 0px 0px 0px 20px rgba(128, 128, 128, 0.5);
+}
+
+body::-webkit-scrollbar-button:active {
+    box-shadow: inset 0px 0px 0px 20px rgba(128, 128, 128, 0.7);
+}
+
+body.scrollable::-webkit-scrollbar-button:vertical:start:increment,
+body.scrollable::-webkit-scrollbar-button:vertical:end:decrement {
+    display: none;
+}
+
+.modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    background-color: #fff;
+    position: absolute;
+    z-index: 100;
+    max-width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 2rem;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal.show~.modal-bg {
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+    width: 100%;
+    height: 100vmax;
+    background-color: rgba(0, 0, 0, 0.772);
+}
+
+.modal .modal__title {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.modal .modal__input {
+    display: flex;
+    width: 70%;
+    gap: 1rem;
+    border: 1px solid var(--secondary-color);
+    padding: .5rem 1rem;
+    border-radius: .2em;
+}
+
+.modal__input .input__field {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.modal .close-btn {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    position: relative;
+
+    cursor: pointer;
+    background-color: #fff;
+    /* width: 50px; */
+    height: 40px;
+}
+
+.modal .close-btn span {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.modal .close-btn span:first-child {
+    transform-origin: left center;
+    transform: translateX(5px) rotate(45deg);
+}
+
+.modal .close-btn span:last-child {
+    transform-origin: right center;
+    transform: rotate(-45deg);
 }
 
 .nav,
@@ -102,6 +221,12 @@ body {
     border-radius: .3em;
     cursor: pointer;
     width: max-content;
+    transition: transform 300ms;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    transform: scale(.9);
 }
 
 
@@ -120,6 +245,7 @@ body {
     color: white;
     padding: 1em 3em;
 }
+
 
 .full-screen-header {
     height: 100vh;
@@ -273,12 +399,25 @@ body {
     box-shadow: 0 0 0 100vmax var(--primary-color);
     clip-path: inset(0 -100vmax);
     z-index: -2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.3rem;
 }
 
 .section-download .content__title {
     font-size: 2rem;
     font-weight: 500;
+}
 
+.section-download .available-images {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
+    min-width: 70%;
+    gap: 1rem;
 }
 
 .section-download .section__images {
@@ -297,7 +436,11 @@ body {
     transform: translateX(100px);
 }
 
-.section.section-reviews {}
+.section.section-reviews {
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
 
 .section-reviews .section__title {
     font-weight: 500;
@@ -348,6 +491,15 @@ body {
     font-size: 1.2rem;
 }
 
+.section__review {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.review-nav-btn-container {}
+
+
 .btn-nav {
     background-color: var(--primary-color);
     width: 50px;
@@ -357,6 +509,11 @@ body {
     outline: none;
     cursor: pointer;
     position: relative;
+    transition: box-shadow 200ms;
+}
+
+.btn-nav:hover {
+    box-shadow: 0 0 10px 0 rgba(8, 8, 8, 0.986);
 }
 
 .btn-nav::before,
@@ -370,6 +527,15 @@ body {
     border-radius: 100vmax;
     width: 10px;
     height: 2px;
+}
+
+.btn-nav.inactive {
+    background-color: #fff;
+}
+
+.btn-nav.inactive::before,
+.btn-nav.inactive::after {
+    background-color: var(--secondary-color);
 }
 
 .review-prev.btn-nav::after,

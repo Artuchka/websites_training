@@ -16,7 +16,41 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="scrollable">
+
+
+    <form class="modal" data-modal>
+        <div class="close-btn" data-close-modal>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="modal__title">Стань нашим партнером
+            и начни зарабатывать:</div>
+        <div class="modal__input">
+            <div class="input__image"><img src="img/modal/name.png" alt=""></div>
+            <input type="text" class="input__field" placeholder="Введите имя">
+        </div>
+        <div class="modal__input">
+            <div class="input__image"><img src="img/modal/email.png" alt=""></div>
+            <input type="email" class="input__field" placeholder="E-mail">
+        </div>
+        <div class="modal__input">
+            <div class="input__image"><img src="img/modal/phone.png" alt=""></div>
+            <input type="text" class="input__field" placeholder="Номер телефона">
+        </div>
+
+        <div class="modal__checkbox">
+            <div class="checkbox__field"><input type="checkbox"></div>
+            <div class="checkbox__desc">Я хочу получать новости на почтовый адрес</div>
+        </div>
+        <div class="modal__checkbox">
+            <div class="checkbox__field"><input type="checkbox" checked required></div>
+            <div class="checkbox__desc">Я согласен учавствовать в сборе данных</div>
+        </div>
+        <button type="submit" class="btn btn--bold">Получить доступ</button>
+        <div class="conditions">Нажимая кнопку Вы принимаете <a href="#">политику конфиденциальности</a></div>
+    </form>
+    <div class="modal-bg"></div>
 
     <div class="full-screen-header">
         <nav class="nav">
@@ -144,22 +178,26 @@
 
     <section class="section section-reviews">
         <div class="section__title">Отзывы о приложении</div>
-        <div class="review">
-            <div class="review__text">Таким образом консультация с широким активом влечет за собой процесс внедрения и
-                модернизации направлений прогрессивного развития. Разнообразный и богатый опыт сложившаяся структура
-                организации обеспечивает широкому кругу (специалистов)
-                участие в формировании модели развития.</div>
-            <div class="review__author">
-                <div class="author__avatar"><img src="img/person_avatar.png" alt=""></div>
-                <div class="author__desc">
-                    <div class="desc__name">John Doe</div>
-                    <div class="desc__profession">Водитель</div>
+        <div class="section__review">
+            <div class="review">
+                <div class="review__text">Таким образом консультация с широким активом влечет за собой процесс внедрения
+                    и
+                    модернизации направлений прогрессивного развития. Разнообразный и богатый опыт сложившаяся структура
+                    организации обеспечивает широкому кругу (специалистов)
+                    участие в формировании модели развития.</div>
+                <div class="review__author">
+                    <div class="author__avatar"><img src="img/person_avatar.png" alt=""></div>
+                    <div class="author__desc">
+                        <div class="desc__name">John Doe</div>
+                        <div class="desc__profession">Водитель</div>
+                    </div>
                 </div>
             </div>
+            <div class="review-nav-btn-container">
+                <button class="btn-nav review-prev"></button>
+                <button class="btn-nav review-next"></button>
+            </div>
         </div>
-
-        <button class="btn-nav review-prev"></button>
-        <button class="btn-nav review-next"></button>
     </section>
 
     <footer class="footer">
